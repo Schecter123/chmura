@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://Full2020_086399:3306/chmura";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/chmura";
 
     static final String USER = "JRadomski";
     static final String PASS = "root";
