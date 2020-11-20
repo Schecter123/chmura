@@ -1,11 +1,9 @@
 import java.sql.*;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Main {
 
     static Scanner in = new Scanner(System.in);
-    private static final String SELECT_ALL_FROM_CARS = "SELECT ID, BRAND, MODEL, PRODUCTION_YEAR, TYPE FROM Cars";
 
     public static void main(String[] args) {
 
