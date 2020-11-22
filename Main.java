@@ -10,13 +10,12 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
 
         while (true){
-
+        TimeUnit.SECONDS.sleep(15);
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chmuraTest", "JRadomski", "root");
              Statement stmt = conn.createStatement())
 
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            TimeUnit.SECONDS.sleep(30);
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Students (ID int NOT NULL AUTO_INCREMENT, Imie varchar(255), Nazwisko varchar(255), Miasto varchar(255), Indeks integer(255), PRIMARY KEY (ID) );");
             String selectedOperation;
             do {
