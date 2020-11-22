@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-        TimeUnit.SECONDS.sleep(30);
+        while (true){
 
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chmuraTest", "JRadomski", "root");
              Statement stmt = conn.createStatement())
@@ -39,7 +39,7 @@ public class Main {
             } while (!selectedOperation.toUpperCase().equals("E"));
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
-        }
+        }}
     }
 
     private static void deleteStudent(Statement stmt) throws SQLException {
