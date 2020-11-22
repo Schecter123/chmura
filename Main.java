@@ -11,7 +11,7 @@ public class Main {
 
         while (true){
         TimeUnit.SECONDS.sleep(15);
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chmuraTest", "JRadomski", "root");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://Full2020_086399:3306/chmuraTest", "JRadomski", "root");
              Statement stmt = conn.createStatement())
 
         {
