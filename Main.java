@@ -1,11 +1,24 @@
 import java.sql.*;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
 
 public class Main {
 
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
+
+        try {
+            while (DriverManager.getConnection("jdbc:mysql://localhost:3306/chmuraTest", "JRadomski", "root") != null){
+                System.out.println("Lączenie z bazą, proszę czekać");
+                TimeUnit.SECONDS.sleep(10);
+
+            }
+
+        }catch (SQLException | InterruptedException e) {
+
+        }
 
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chmuraTest", "JRadomski", "root");
              Statement stmt = conn.createStatement()) {
