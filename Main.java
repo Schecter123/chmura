@@ -7,21 +7,16 @@ public class Main {
 
     static Scanner in = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        try {
-            while (DriverManager.getConnection("jdbc:mysql://localhost:3306/chmuraTest", "JRadomski", "root") == null){
-                System.out.println("Lączenie z bazą, proszę czekać");
-                TimeUnit.SECONDS.sleep(10);
-
-            }
-
-        }catch (SQLException | InterruptedException e) {
-
-        }
+        TimeUnit.SECONDS.sleep(30);
 
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chmuraTest", "JRadomski", "root");
-             Statement stmt = conn.createStatement()) {
+             Statement stmt = conn.createStatement())
+
+        {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            TimeUnit.SECONDS.sleep(30);
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Students (ID int NOT NULL AUTO_INCREMENT, Imie varchar(255), Nazwisko varchar(255), Miasto varchar(255), Indeks integer(255), PRIMARY KEY (ID) );");
             String selectedOperation;
             do {
@@ -42,7 +37,7 @@ public class Main {
                         break;
                 }
             } while (!selectedOperation.toUpperCase().equals("E"));
-        } catch (Exception e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
