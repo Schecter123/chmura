@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-            while (DriverManager.getConnection("jdbc:mysql://localhost:3306/chmuraTest", "JRadomski", "root") != null){
+            while (DriverManager.getConnection("jdbc:mysql://localhost:3306/chmuraTest", "JRadomski", "root") == null){
                 System.out.println("Lączenie z bazą, proszę czekać");
                 TimeUnit.SECONDS.sleep(10);
 
